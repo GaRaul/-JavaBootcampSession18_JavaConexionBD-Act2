@@ -11,17 +11,17 @@ public class MainApp {
 	public static void main(String[] args) {
 
 		Mysql.openConnection();
-		Mysql.createDB("Tienda_de_Informatica");
+		Mysql.createDB("Empleados");
 
-		Mysql.createTable("Tienda_de_Informatica", "Fabricantes", Inserciones.tablaFabricantesCampos);
-		Mysql.createTable("Tienda_de_Informatica", "Articulos", Inserciones.tablaArticulosCampos);
+		Mysql.createTable("Empleados", "Departamentos", Inserciones.tablaDepartamentosCampos);
+		Mysql.createTable("Empleados", "Empleados", Inserciones.tablaEmpleadosCampos);
 
-		Mysql.insertData("Tienda_de_Informatica", "Fabricantes", Inserciones.insercionTablaFabricantes);
-		Mysql.insertData("Tienda_de_Informatica", "Articulos", Inserciones.insercionTablaArticulos);
+		Mysql.insertData("Empleados", "Departamentos", Inserciones.insercionTablaDepartamentos);
+		Mysql.insertData("Empleados", "Empleados", Inserciones.insercionTablaEmpleados);
 		
-		Mysql.getValues("Tienda_de_Informatica", "Articulos");
-		Mysql.deleteRecord("Tienda_de_Informatica", "Articulos", 1);
-		Mysql.getValues("Tienda_de_Informatica", "Articulos");
+		Mysql.getValues("Empleados", "Empleados");
+		Mysql.deleteRecord("Empleados", "Empleados", "1023245M");
+		Mysql.getValues("Empleados", "Empleados");
 		Mysql.closeConnection();
 	}
 
